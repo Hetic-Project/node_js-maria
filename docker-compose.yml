@@ -31,7 +31,7 @@ services:
     # dockerfile: Dockerfile
     image: node:22-alpine
     ports:
-      - "8080:8080"
+      - "8080:8081"
     volumes:
       - ./backend:/backend
       - node_modules:/backend/node_modules
