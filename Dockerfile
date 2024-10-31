@@ -1,8 +1,8 @@
-FROM node:23
+FROM node:22-alpine
 
 WORKDIR /backend
 
-COPY backend/package.json ./
+COPY ./backend/package.json ./
 
 RUN npm install
 
