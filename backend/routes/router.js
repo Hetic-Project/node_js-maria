@@ -12,12 +12,15 @@ const storage= multer.diskStorage({
         cb(null, file.originalname)
     }
 })
-const upload = multer({ storage })
-// router.post('/upload', upload.single('file'),{
-//     destination: function(req, file, cb) {
-//         cb(null, 'backend/upload')
-//     }
-// })
+
+const upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: 1000000 // 1MB
+    }
+});
+// const upload = multer({ storage })
+
 
 
 router.get("/", (req, res, next) => {
