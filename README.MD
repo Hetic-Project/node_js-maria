@@ -7,7 +7,7 @@ Le groupe est composé de :
 - Hamil Yassine
 
 ## Configuration
-Créez un fichier `.env` et ajoutez-y la ligne suivante :
+Créez un fichier `.env` à la racine du projet et ajoutez-y la ligne suivante :
 JWT_KEY=29adabecc4607233acf1b5a7780b6c4c2027db08a652cfd8dbffbb56081b6665
 
 ## Lancer le projet
