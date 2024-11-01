@@ -30,6 +30,10 @@ services:
     # context: ./
     # dockerfile: Dockerfile
     image: node:22-alpine
+    env_file:
+      - .env
+    environment:
+      - JWT_KEY=${JWT_KEY}
     ports:
       - "8080:8081"
     volumes:

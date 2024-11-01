@@ -5,6 +5,7 @@ export const user_model = {
         escape: true
     },
     password: {
-        exists: true
+        exists: true,
+        notEmpty: true,
     }
 }

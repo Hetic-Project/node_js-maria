@@ -1,5 +1,5 @@
-const file_data = require("../models/fileDataModel");
 const database = require("../controllers/dbConnection");
+const file_data = require("../models/fileDataModel");
 
 module.exports.uploadFile = async (req, res, next) => {
     try {
