@@ -13,8 +13,8 @@ module.exports.uploadFile = async (req, res, next) => {
             originalName: req.file.originalname,
             size: req.file.size,
             encoding: req.file.encoding,
-            user_id: 1
-            // user: req.user.id = 1 // Assurez-vous que l'ID de l'utilisateur est disponible dans req.user
+            user_id: req.user.id
+            // user_id: 1
         };
 
         try {

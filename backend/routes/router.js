@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const uploadFileController = require("../controllers/uploadFile");
 const authController = require("../controllers/authentification")
+const authMiddleware = require("../middlewares/authMiddleware")
 // const getFilesController = require("../controllers/getFiles")
 
 
@@ -33,7 +34,7 @@ router.get("/", function (req, res, next) {
 router.post("/login", authController.login)
 router.post("/register", authController.register)
 
-router.post("/upload", upload.single("file"), uploadFileController.uploadFile);
+router.post("/upload", authMiddleware, upload.single("file"), uploadFileController.uploadFile);
 // router.get("/allFiles", getFiles.getFiles)
 
 module.exports = router;
