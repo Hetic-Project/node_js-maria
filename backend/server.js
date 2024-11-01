@@ -1,10 +1,8 @@
-
 const express = require('express')
 const router = require('./routes/router')
 
 const app = express()
 const port = "8081"
-
 
 app.use(express.json());
 

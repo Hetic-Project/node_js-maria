@@ -23,7 +23,7 @@ services:
       # - db-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "transfer-app"
+      MYSQL_DATABASE: "db_maria"
 
   backend:
     # build:

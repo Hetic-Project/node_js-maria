@@ -6,7 +6,9 @@ module.exports.uploadFile = async (req, res, next) => {
         if (!req.file) {
             return res.status(400).send("No file uploaded or file is too large.");
         }
-        res.send(req.file);
+        // res.send(req.file);
+        console.log('REQ.FILE : ', req.file)
+
         const fileInfo = {
             originalName: req.file.originalname,
             size: req.file.size,
@@ -19,7 +21,8 @@ module.exports.uploadFile = async (req, res, next) => {
             const query = 'INSERT INTO file_data_model (originalName, size, encoding, user_id) VALUES (?, ?, ?, ?)';
             const values = [fileInfo.originalName, fileInfo.size, fileInfo.encoding, fileInfo.user_id];
             const [result] = await database.query(query, values);
-            console.log(result);
+            console.log('RESULT : ', result);
+
         } catch (error) {
             console.error('Error inserting file information into the database:', error);
         }

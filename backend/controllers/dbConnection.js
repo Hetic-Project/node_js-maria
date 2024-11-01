@@ -8,5 +8,4 @@ const database = mysql.createPool({
     database: "db_maria",
   });
   
-
 module.exports = database;
