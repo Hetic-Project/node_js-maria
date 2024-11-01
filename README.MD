@@ -13,8 +13,8 @@ JWT_KEY=29adabecc4607233acf1b5a7780b6c4c2027db08a652cfd8dbffbb56081b6665
 ## Lancer le projet
 Pour lancer le projet, exécutez la commande suivante :
 - docker compose up --build 
-Un fichier Makefile comporte les commandes d'execution des containers.
-Un fichier init.sql permet de créer une base de données d'initialisation avec les tables nécessaires.
+- Un fichier Makefile comporte les commandes d'execution des containers.
+- Un fichier init.sql permet de créer une base de données d'initialisation avec les tables nécessaires.
 
 ## Utilisation
 1. Lancez avec Live server le fichier [`register.html`]
