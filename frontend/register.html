@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/register.css">
     <title>Register - Hetic</title>
 </head>
 <body>
@@ -39,7 +40,7 @@
             }
 
             try {
-                const response = await fetch("http://localhost:3001/register", {
+                const response = await fetch("http://localhost:8080/register", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ username, password, confirmPassword })
@@ -62,86 +63,3 @@
     </script>
 </body>
 </html>
-
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #ABAB8E;
-    }
-
-    .container {
-        background-color: #fff;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        width: 300px;
-        text-align: center;
-    }
-
-    h2 {
-        margin-bottom: 1.5rem;
-        color: #333;
-    }
-
-    label {
-        display: block;
-        margin: 0.5rem 0 0.25rem;
-        font-size: 0.9rem;
-        color: #555;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-        width: 100%;
-        padding: 0.5rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 1rem;
-    }
-
-    button {
-        width: 100%;
-        padding: 0.75rem;
-        background-color: #7A7A66;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    button:hover {
-        background-color: #7A7A37;
-    }
-
-    .login-link {
-        margin-top: 1rem;
-        font-size: 0.9rem;
-        color: #555;
-    }
-
-    .login-link a {
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .login-link a:hover {
-        text-decoration: underline;
-    }
-
-    #error-message {
-        margin-top: 1rem;
-        font-size: 0.9rem;
-    }
-</style>

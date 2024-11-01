@@ -4,8 +4,6 @@ const multer = require("multer");
 const uploadFileController = require("../controllers/uploadFile");
 const authController = require("../controllers/authentification")
 const authMiddleware = require("../middlewares/authMiddleware")
-// const getFilesController = require("../controllers/getFiles")
-
 
 const storage = multer.diskStorage({
   destination: "/backend/upload",
@@ -17,24 +15,17 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
   limits: {
-    fileSize: 5000000, // 1MB
+    fileSize: 250000000, // 2Go
   },
 });
-// const upload = multer({ storage })
 
 router.get("/", function (req, res, next) {
   res.send("Root")
 })
 
-// router.get("/", async (req, res, next) => {
-//   const [response] = await database.query("SELECT * FROM user_model");
-//   console.log('response');
-// });
-
 router.post("/login", authController.login)
 router.post("/register", authController.register)
 
 router.post("/upload", authMiddleware, upload.single("file"), uploadFileController.uploadFile);
-// router.get("/allFiles", getFiles.getFiles)
 
 module.exports = router;

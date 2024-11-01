@@ -1,8 +1,8 @@
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const { body, validationResult } = require("express-validator") // Pour validation et désinfection des inputs dans le body
-const user_model = require("../models/userModel")
 const database = require("../controllers/dbConnection");
+const user_model = require("../models/userModel")
 
 
 module.exports.login = async (req, res, next) => {
